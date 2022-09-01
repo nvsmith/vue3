@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue3</title>
+    <script src="https://unpkg.com/vue@3.0.2"></script>
+  </head>
+  <body>
+    <h1>Book Displays vith Vue</h1>
+    <p>
+      See how the book elements change in the DOM after clicking the buttons
+    </p>
+
+    <hr />
+
+    <div id="app">
+      <h4>DOM Removal/Injection with Conditionals</h4>
+      <button @click="toggleShowBooks">
+        <span v-if="showBooks">Hide Book 1</span>
+        <span v-else>Show Book 1</span>
+      </button>
+
+      <div v-if="showBooks">
+        <h2>{{ title }}</h2>
+        <h3>{{ author }} - {{year}}</h3>
+      </div>
+
+      <h4>Show/Hide with CSS</h4>
+      <button @click="toggleShowBooks2">
+        <span v-if="showBooks2">Hide Book 2</span>
+        <span v-else>Show Book 2</span>
+      </button>
+
+      <div v-show="showBooks2">
+        <h2>{{ title2 }}</h2>
+        <h3>{{ author2 }} - {{year2}}</h3>
+      </div>
+    </div>
+    <!-- end #app -->
+
+    <script src="app.js"></script>
+  </body>
+</html>
