@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue3</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/vue@3.0.2"></script>
+  </head>
+
+  <body>
+    <h1>Dynamic Classes & Computed Properties with Vue</h1>
+    <p>See how classes and their attributes change with click events.</p>
+    <hr />
+
+    <div id="app">
+      <div v-if="showBooks">
+        <h5>Example 1: Dynamic Classes</h5>
+        <ul>
+          <li
+            v-for="book in books"
+            v-bind:class="{ fav: book.isFav }"
+            v-on:click="toggleFav(book)"
+          >
+            <img v-bind:src="book.img" v-bind:alt="book.title" />
+            <h3>{{book.title}}</h3>
+            <p>{{book.author}}</p>
+          </li>
+        </ul>
+      </div>
+
+      <hr />
+
+      <div v-if="showBooks">
+        <h5>Example 2: Filtering with Computed Properties</h5>
+        <ul>
+          <li
+            v-for="book in filteredBooks"
+            v-bind:class="{ fav: book.isFav }"
+            v-on:click="toggleFav(book)"
+          >
+            <img v-bind:src="book.img" v-bind:alt="book.title" />
+            <h3>{{book.title}}</h3>
+            <p>{{book.author}}</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- end #app -->
+
+    <script src="app.js"></script>
+  </body>
+</html>
