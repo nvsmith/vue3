@@ -1,0 +1,8 @@
+.box {
+    background-color: aquamarine;
+    display: inline-block;
+    margin: 20px;
+    padding: 100px 0;
+    text-align: center;
+    width: 400px;
+}

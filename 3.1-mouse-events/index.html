@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue3</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/vue@3.0.2"></script>
+  </head>
+
+  <body>
+    <h1>Mouse Events vith Vue</h1>
+    <p>See how the elements change in the console for each mouse event.</p>
+
+    <hr />
+
+    <div id="app">
+      <!-- Mouse events -->
+      <div class="box" v-on:mouseover="handleEvent($event, 5)">mouseover</div>
+      <div class="box" @mouseleave="handleEvent">mouseleave</div>
+      <div class="box" @dblclick="handleEvent">double click</div>
+      <div class="box" v-on:mousemove="handleMousemove">
+        Position: ({{ x }}, {{ y }})
+      </div>
+    </div>
+    <!-- end #app -->
+
+    <script src="app.js"></script>
+  </body>
+</html>
